@@ -1,0 +1,6 @@
+{
+  "name": "Cadillac Window Sticker",
+  "description": "Official Cadillac Window Sticker (Monroney Label) & VIN Decoder platform. Recreate factory specifications, original MSRP, build sheets, and option details with instant PDF reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

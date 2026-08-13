@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --text-2xs: 0.875rem;
+  --text-sm: 0.875rem;
+}
+
+@layer base {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+@layer base {
+  :root {
+    --bg-main: #ffffff;
+    --bg-alt: #fafafa;
+    --bg-band: #f7f7f8;
+    
+    --text-primary: #282828;
+    --text-secondary: #787878;
+    --text-dark: #000000;
+    
+    --border-subtle: #e5e5e7;
+    --border-medium: #d2d2d2;
+    
+    --brand-red: #fa0037;
+    --brand-red-hover: #c8002b;
+    --brand-red-accessible: #a00021;
+    
+    --brand-blue: #2c28e8;
+    --brand-blue-hover: #211fab;
+    
+    --brand-gold: #f3c846;
+    --brand-gold-tint: #fefce8;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar & luxury focus states */
+:focus-visible {
+  outline: 2px solid #2c28e8;
+  outline-offset: 2px;
+}
+
+/* Print Styles for Monroney Window Sticker */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #monroney-sticker-printable, #monroney-sticker-printable * {
+    visibility: visible;
+  }
+  #monroney-sticker-printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
