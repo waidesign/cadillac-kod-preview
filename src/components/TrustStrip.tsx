@@ -106,6 +106,7 @@ export const TrustStrip: React.FC = () => {
             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" 
             alt="Gracia Automotive Historian" 
             className="w-20 h-20 rounded-full object-cover border-2 border-[#282828] shrink-0"
+            loading="lazy"
           />
           <div className="space-y-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2">

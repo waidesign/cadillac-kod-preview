@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Agentation } from 'agentation';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { LookupCard } from './components/LookupCard';
-import { MonroneySticker } from './components/MonroneySticker';
 import { TrustStrip } from './components/TrustStrip';
 import { StepTracker } from './components/StepTracker';
 import { FeatureGrid } from './components/FeatureGrid';
@@ -21,16 +20,19 @@ import { EveryModelStickersSection } from './components/EveryModelStickersSectio
 import { GetYourStickerTodaySection } from './components/GetYourStickerTodaySection';
 import { CadillacArticlesSection } from './components/CadillacArticlesSection';
 import { KorayFaqSection } from './components/KorayFaqSection';
-import { PricingSection } from './components/PricingSection';
-import { ModelGrid } from './components/ModelGrid';
-import { ModelDetailView } from './components/ModelDetailView';
-import { ToolDetailView } from './components/ToolDetailView';
-import { BlogView } from './components/BlogView';
-import { ArticleView } from './components/ArticleView';
-import { LegalViews } from './components/LegalViews';
-import { AuthView } from './components/AuthView';
-import { VinFinderModal } from './components/VinFinderModal';
-import { CheckoutModal } from './components/CheckoutModal';
+
+// Lazy load non-critical components to improve initial bundle size and performance
+const MonroneySticker = lazy(() => import('./components/MonroneySticker').then(m => ({ default: m.MonroneySticker })));
+const PricingSection = lazy(() => import('./components/PricingSection').then(m => ({ default: m.PricingSection })));
+const ModelGrid = lazy(() => import('./components/ModelGrid').then(m => ({ default: m.ModelGrid })));
+const ModelDetailView = lazy(() => import('./components/ModelDetailView').then(m => ({ default: m.ModelDetailView })));
+const ToolDetailView = lazy(() => import('./components/ToolDetailView').then(m => ({ default: m.ToolDetailView })));
+const BlogView = lazy(() => import('./components/BlogView').then(m => ({ default: m.BlogView })));
+const ArticleView = lazy(() => import('./components/ArticleView').then(m => ({ default: m.ArticleView })));
+const LegalViews = lazy(() => import('./components/LegalViews').then(m => ({ default: m.LegalViews })));
+const AuthView = lazy(() => import('./components/AuthView').then(m => ({ default: m.AuthView })));
+const VinFinderModal = lazy(() => import('./components/VinFinderModal').then(m => ({ default: m.VinFinderModal })));
+const CheckoutModal = lazy(() => import('./components/CheckoutModal').then(m => ({ default: m.CheckoutModal })));
 
 import { CADILLAC_MODELS } from './data/cadillacModels';
 import { TOOLS_DATA } from './data/toolsData';
@@ -139,6 +141,7 @@ export default function App() {
 
       {/* Main Dynamic View Content */}
       <main className="flex-grow">
+        <Suspense fallback={<div className="flex items-center justify-center min-h-[50vh]"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#FA0037]"></div></div>}>
         
         {/* VIEW 1: HOME PAGE */}
         {currentView === 'home' && (
@@ -400,6 +403,7 @@ export default function App() {
           />
         )}
 
+        </Suspense>
       </main>
 
       {/* Global Footer */}

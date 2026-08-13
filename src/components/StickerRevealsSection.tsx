@@ -172,6 +172,7 @@ export const StickerRevealsSection: React.FC = () => {
                           alt="Cadillac Window Sticker Sample" 
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
+                          loading="lazy"
                         />
                       </div>
 
@@ -207,6 +208,7 @@ export const StickerRevealsSection: React.FC = () => {
                   alt="Cadillac Window Sticker Sample" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               </div>
 

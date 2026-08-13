@@ -100,7 +100,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost, onBack }) => {
 
               <div className="pt-4 border-t border-[#E5E5E7] flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <img src={post.author.avatar} alt={post.author.name} className="w-7 h-7 rounded-full object-cover border border-[#282828]" />
+                  <img src={post.author.avatar} alt={post.author.name} className="w-7 h-7 rounded-full object-cover border border-[#282828]" loading="lazy" />
                   <div>
                     <div className="text-sm font-bold text-[#282828]">{post.author.name}</div>
                     <div className="text-[14px] text-[#787878]">{post.author.role}</div>

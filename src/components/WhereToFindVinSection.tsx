@@ -200,6 +200,7 @@ export const WhereToFindVinSection: React.FC = () => {
                     alt="Cadillac VIN Location Visual" 
                     className="w-full h-full object-cover opacity-90"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
 
                   {/* Hotspot Pulse Pins for Physical Spots */}
@@ -234,6 +235,7 @@ export const WhereToFindVinSection: React.FC = () => {
                     alt={`${selectedItem.title} Specimen`}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                   />
                 </div>
               )}

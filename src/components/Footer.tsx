@@ -21,6 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 alt="Cadillac Window Sticker" 
                 referrerPolicy="no-referrer"
                 className="h-9 w-auto object-contain"
+                loading="lazy"
               />
             </div>
             <p className="text-sm text-[#787878] leading-relaxed max-w-sm">

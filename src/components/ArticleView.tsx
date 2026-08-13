@@ -48,7 +48,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({ post, onBack, onOpenLo
         {/* Author Box Bar */}
         <div className="bg-[#F7F7F8] border border-[#D2D2D2] rounded-2xl p-4 mb-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={post.author.avatar} alt={post.author.name} className="w-12 h-12 rounded-full object-cover border-2 border-[#282828]" />
+            <img src={post.author.avatar} alt={post.author.name} className="w-12 h-12 rounded-full object-cover border-2 border-[#282828]" loading="lazy" />
             <div>
               <div className="text-sm font-extrabold text-[#282828]">{post.author.name}</div>
               <div className="text-sm text-[#787878] font-medium">{post.author.role}</div>
@@ -76,7 +76,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({ post, onBack, onOpenLo
         {/* Author Full Bio Footer Box */}
         <div className="mt-12 pt-8 border-t border-[#D2D2D2] bg-[#F7F7F8] p-6 rounded-2xl border">
           <div className="flex items-start gap-4">
-            <img src={post.author.avatar} alt={post.author.name} className="w-16 h-16 rounded-full object-cover border-2 border-[#282828] shrink-0" />
+            <img src={post.author.avatar} alt={post.author.name} className="w-16 h-16 rounded-full object-cover border-2 border-[#282828] shrink-0" loading="lazy" />
             <div>
               <div className="text-sm font-extrabold text-[#282828] mb-1">About the Author: {post.author.name}</div>
               <p className="text-sm text-[#787878] leading-relaxed mb-3">
